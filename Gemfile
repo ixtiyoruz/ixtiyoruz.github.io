@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # gem 'jekyll'
 gem "github-pages", group: :jekyll_plugins
 
-gem 'kramdown-parser-gfm'
+gem "kramdown", ">= 2.3.1"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
