@@ -3,6 +3,7 @@ layout: post
 title:  "Bayes Rule"
 date:   2021-08-04 11:55:28 +0900
 author: ikhtiyor
+image: /assets/images/bayes.webp
 ---
 
 <h1> Bayes Rule </h1>
@@ -16,3 +17,5 @@ Initially lets assume that we have two kinds of data available ( we will learn t
 <p>
 Firstly lets consider only the first input data which is z sensor observation. Basically, we have to find state estimation given sensor observation z P(x|z). We cannot measure this directly so lets try to simplify it so that we can calcualte it. From conditional probability we know that P(A and B) = P(A|B) * P(B) = P(B|A) * P(A). So Bayes rule can be directly obtained from conditional probability which then becomes:
 </p>
+
+
