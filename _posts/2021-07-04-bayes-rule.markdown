@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Bayes Rule
-date: 2017-08-20 13:32:20 +0300
+date: 2021-07-04 07:05:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 # img: post-6.jpg # Add image post (optional)
-tags: [Blog, Meditation]
+tags: [Blog, Math]
 author: # Add name author (optional)
 usemathjax: true
 ---
