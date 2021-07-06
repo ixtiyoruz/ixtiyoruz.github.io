@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bayes Rule
-date: 2021-07-04 07:05:20 +0000
+date: 2021-07-04 07:05:20 +0900
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 # img: post-6.jpg # Add image post (optional)
 tags: [Blog, Math]
