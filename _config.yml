@@ -12,6 +12,7 @@ url: "https://ixtiyoruz.github.io/" # the base hostname & protocol for your site
 author: Majidov Ikhtiyor # add your name
 author-pic: None
 about-author: My name is Majidoc Ikhtiyor I am AI enthusiast.
+# future: true
 
 # Contact links
 email: # Add your Email address

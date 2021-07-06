@@ -1,0 +1,7 @@
+I"_<p>Hello. today we will see another very basic and profound integral part of machine learning and statistics, Bayes filter. It mainly derived from bayes rule and its’ basic objective is to find out the likelihood/estimation of current state given all the actions and observations up to now. 
+\(\)</p>
+
+<p>
+$$ P(A|B)= \frac{P(B|A)P(A)}{P(B)} $$
+</p>
+:ET
