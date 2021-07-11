@@ -1074,7 +1074,9 @@ pre code {
   position: relative;
   list-style: none;
   float: left;
-  width: 50%;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -1090,7 +1092,7 @@ pre code {
 .post-card .post-card-image {
   display: block;
   width: 100%;
-  min-height: 150px;
+  min-height: 75px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1195,7 +1197,7 @@ pre code {
 }
 
 .page-content {
-  margin-top: -80px;
+  margin-top: 10px;
   margin-bottom: 100px;
   background-color: #fff;
   padding: 20px;
