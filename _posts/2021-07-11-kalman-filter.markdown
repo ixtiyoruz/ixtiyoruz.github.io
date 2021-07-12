@@ -391,7 +391,7 @@ $$
 Second derivative gives us the inverse of covariance matrix of belief $$ bel(x_t) $$ 
 <p>
 $$
-\Sigma_t = (-C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1})^{-1}
+\Sigma_t = (C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1})^{-1}
 $$
 </p>
 
@@ -460,3 +460,47 @@ $$= \overline{\Sigma}_t C_t^T (C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}$$
 
 This proves the correctness of line 4.
 
+Line 6 can be obtained by expressing covariance by kalman gain, the inversion will also be eliminated.
+<p>
+$$
+\Sigma_t = (C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1})^{-1}
+$$
+</p>
+
+We again use Inversion Lemma.
+
+<p>
+$$
+(\overline{\Sigma}_t + C_t^T Q_t^{-1} C_t)^{-1}=  \overline{\Sigma}_t - \overline{\Sigma}_t  C_t^T (Q_t + C_t \overline{\Sigma}_t C_t^{T})^{-1} C_T \overline{\Sigma}_t
+$$
+</p>
+
+And substitute it to covariance equation and solve it.
+<p>
+$$
+\Sigma_t = (C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1})^{-1}
+$$
+$$
+=  \overline{\Sigma}_t - \overline{\Sigma}_t C_t^T (Q_t + C_t \overline{\Sigma}_t C_t^{T})^{-1} C_t \overline{\Sigma}_t 
+$$
+$$
+=  [I - \overline{\Sigma}_t C_t^T (Q_t + C_t \overline{\Sigma}_t C_t^{T})^{-1} C_t] \overline{\Sigma}_t 
+$$
+</p>
+
+Second term in the scope gives the Kalman Gain multiplied by $$C_t$$.
+<p>
+$$
+K_t = \overline{\Sigma}_t C_t^T (C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}
+$$
+</p>
+
+Thus our Covariance equation then becoms.
+<p>
+$$
+\Sigma_t = (I - K_t C_t) \overline{\Sigma}_t
+$$
+</p>
+
+
+And, that is the proof of line 6.
