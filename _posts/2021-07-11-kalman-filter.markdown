@@ -351,18 +351,112 @@ $$
 $$
 </p>
 
-<h3> proof for correction part <h3>
+<h3><b> Proof for correction part</b> </h3>
 Now, let us try to prove update (correction) part of the kalman filter. 
 So far we talked about second part of bayes filter. Now lets focus on now incorporating that prediction and observation into account.
 
 
 <p>
-$$bel(x_t) = \eta p(z_t | x_t) \int P(x_t | x_{t-1}, u_t) bel(x_{t-1}) d(x_{t-1})$$
+$$bel(x_t) = \eta p(z_t | x_t) \overline{bel}(x_t)$$
+</p>
+
+<p>
+Here, $$P(z_t|x_t)$$ and prior belief are both normal gaussian. 
+</p>
+
+Since there are two exponentials multiplying each other, result is also exponential so we can write the equation using only one exponent. 
+<p>
+$$bel(x_t) = \eta exp(-J_t)$$
+</p>
+
+Its' argument is a summation of the arguments of that two exponents.
+<p>
+$$
+J_t = \frac{1}{2}(z_t - C_t x_t)^T Q_t^{-1} (z_t - C_t x_t) + \frac{1}{2} (x_t - \overline{\mu}_t)^T \overline{\Sigma}_t^{-1} (x_t - \overline{\mu}_t)
+$$
+</p>
+
+Here we are using overline to indicate that the term belong to prior(predicted) gaussian.
+Multiplication of two gaussian is also gaussian so $$bel(x_t)$$ is also gaussian. In order to calculate the parameters of this gaussian we again need to calculate first and second derivatives.
+<p>
+$$
+\frac{\delta J_t}{\delta x_t} = -C_t^T Q_t^{-1} (z_t - C_t x_t) + \overline{\Sigma}_t^{-1}(x_t - \overline{\mu})
+$$
+</p>
+<p>
+$$
+\frac{\delta^2 J_t}{\delta x_t^2} = -C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1}
+$$
+</p>
+Second derivative gives us the inverse of covariance matrix of belief $$ bel(x_t) $$ 
+<p>
+$$
+\Sigma_t = (-C_t^T Q_t^{-1} C_t  + \overline{\Sigma}_t^{-1})^{-1}
+$$
+</p>
+
+Mean of the $$ bel(x_t) $$  is the maximum of this exponential function or minimum of $$J_t$$. So lets equalize the first derivative to zero.
+<p>
+$$-C_t^T Q_t^{-1} (z_t - C_t x_t) + \overline{\Sigma}_t^{-1}(x_t - \overline{\mu} = 0$$
+</p>
+Moving the mean connected part to other side of the equal sign gives us this
+<p>
+$$C_t^T Q_t^{-1} (z_t - C_t x_t) = \overline{\Sigma}_t^{-1}(x_t - \overline{\mu} $$
+</p>
+Lets define the left part of the equal sign as
+<p>
+$$C_t^T Q_t^{-1} (z_t - C_t x_t) = C_t^T Q_t^{-1} (z_t - C_t x_t + C_t \overline{\mu}_t -C_t \overline{\mu}_t) $$
+$$= C_t^T Q_t^{-1} (z_t -C_t \overline{\mu}_t + C_t \overline{\mu}_t - C_t x_t ) $$
+$$= C_t^T Q_t^{-1} (z_t -C_t \overline{\mu}_t) - C_t^T Q_t^{-1} (C_t \overline{\mu}_t + C_t x_t ) $$
+</p>
+If we substitute the left part we defined above back into its original place we will get
+<p>
+$$C_t^T Q_t^{-1} (z_t - C_t \overline{\mu}_t) =  (C_t^T Q_t^{-1}C_t +\overline{\Sigma}_t^{-1})(x_t-\overline{\mu}_t)$$
+</p>
+First scope on the right side of equal gives the inverse of covariance of the $$bel(x_t) $$ which we calculated above by taking second derivative.
+<p>
+$$C_t^T Q_t^{-1} (z_t - C_t \overline{\mu}_t) = \Sigma_t^{-1} (x_t-\overline{\mu}_t)$$
+</p>
+we can write above equation like this.
+<p>
+$$ \Sigma_t^{-1} C_t^T Q_t^{-1} (z_t - C_t \overline{\mu}_t) = x_t-\overline{\mu}_t$$
+</p>
+we will name the term $$\Sigma_t^{-1} C_t^T Q_t^{-1} $$ as Kalman Gain $$K_t$$.
+<p>
+$$
+K_t = \Sigma_t C_t^T Q_t^{-1} 
+$$
+</p>
+
+Final form of the equation to find mean of the $$ bel(x_t) $$ is given by
+
+<p>
+$$
+ x_t=\overline{\mu}_t + K_t(z_t - C_t \overline{\mu}_t)
+$$
+</p>
+
+Since, we were calculating mean of the gaussian distribution $$bel(x_t)$$, this  $$x_t = \mu_t$$. Thus.
+
+<p>
+$$
+ \mu_t=\overline{\mu}_t + K_t(z_t - C_t \overline{\mu}_t)
+$$
 </p>
 
 
-$$P(z_t|x_t)$$ and prior belief are both normal gaussian. 
+The kalman gain equation $$K_t = \Sigma_t C_t^T Q_t^{-1} $$ has covariance $$Σ_t$$ which according to kalman filter comes later than kalman gain and uses it so we need to get rid of it.
 
-Since there are two exponentials multiplying each other,  result is also exponential so we can write the equation using only one exponent and its argument is a summation of the arguments of that two exponents.
+<p>
+$$K_t = \Sigma_t C_t^T Q_t^{-1} $$
+$$= \Sigma_t C_t^T Q_t^{-1}(C_t \overline{\Sigma}_t C_t^T +Q_t)(C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1} $$
+$$= \Sigma_t (C_t^T Q_t^{-1} C_t \overline{\Sigma}_t C_t^T +C_t^T Q_t^{-1} Q_t)(C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}$$
+$$= \Sigma_t (C_t^T Q_t^{-1} C_t \overline{\Sigma}_t C_t^T +  C_t^T)(C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}$$
+$$= \Sigma_t (C_t^T Q_t^{-1} C_t \overline{\Sigma}_t C_t^T + \overline{\Sigma}_t \overline{\Sigma}_t^{-1} C_t^T )(C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1} $$
+$$= \Sigma_t (C_t^T Q_t^{-1} C_t +  \overline{\Sigma}_t^{-1})  \overline{\Sigma}_t C_t^T (C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1} $$
+$$= \Sigma_t \Sigma_t^{-1} \overline{\Sigma}_t C_t^T (C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}$$
+$$= \overline{\Sigma}_t C_t^T (C_t \overline{\Sigma}_t C_t^T +Q_t)^{-1}$$
+</p>
 
+This proves the correctness of line 4.
 
