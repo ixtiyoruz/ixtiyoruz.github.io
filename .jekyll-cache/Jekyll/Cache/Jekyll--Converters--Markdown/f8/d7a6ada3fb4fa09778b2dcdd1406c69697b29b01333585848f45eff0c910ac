@@ -1,2 +1,0 @@
-I"Q<p>Hello. today we will see another very basic and profound integral part of machine learning and statistics, Bayes filter. It mainly derived from bayes rule and solves the problem where you have severeal actions \(u_n\) and the same number of observations \(z_n\) and you have to find the likelihood of current state based on that.</p>
-:ET
