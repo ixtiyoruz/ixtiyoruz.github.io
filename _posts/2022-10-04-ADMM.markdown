@@ -3,9 +3,9 @@ layout: post
 title: Alternating Direction Method Of Multipliers (ADMM)
 date: 2022-10-04 07:05:20 +0900
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-# img: post-6.jpg # Add image post (optional)
+# img: back_1.jpg
 tags: [Blog, Math, Optimization]
-author: # Add name author (optional)
+author: Majidov Ikhtiyor # Add name author (optional)
 usemathjax: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Bayes Filter
 date: 2021-07-06 07:07:20 +0900
 description: This post explains Bayes Filter. # Add post description (optional)
-# img: post-6.jpg # Add image post (optional)
+# img: back_1.jpg
 tags: [Blog, Math]
 author: # Add name author (optional)
 usemathjax: true

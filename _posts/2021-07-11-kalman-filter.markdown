@@ -3,7 +3,7 @@ layout: post
 title: Kalman Filter
 date: 2021-07-11 07:07:20 +0900
 description: This post explains Kalman Filter. # Add post description (optional)
-# img: post-6.jpg # Add image post (optional)
+# img: meme1.jpeg # Add image post (optional)
 tags: [Blog, Math]
 author: # Add name author (optional)e
 usemathjax: true
