@@ -1092,7 +1092,7 @@ pre code {
 .post-card .post-card-image {
   display: block;
   width: 100%;
-  min-height: 75px;
+  min-height: 90px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1140,6 +1140,11 @@ pre code {
   color: #fff;
 }
 
+.post-card .post-card-body .date {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0)
+}
 .post-card .post-card-body .tag:hover {
   text-decoration: underline;
 }

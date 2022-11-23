@@ -1,0 +1,49 @@
+---
+layout: post
+title: Alternating Direction Method Of Multipliers (ADMM)
+date: 2022-10-04 07:05:20 +0900
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+# img: post-6.jpg # Add image post (optional)
+tags: [Blog, Math, Optimization]
+author: # Add name author (optional)
+usemathjax: true
+---
+
+about ADMM 
+
+sections:
+
+<h2> Lagrangian relaxation</h2>
+Assume that we have the following optimization problem:
+$$ min f(x) $$ where $$g(x) = b$$ is our constrain.
+
+How can we easily solve this problem ?. What if we incorporate constrain into the main optimization problem. Yes that would be great but how can we do that. Lagrangian relaxation comes to help here.
+
+In mathematical optimization world lagrangian relaxation is used to simplify complex constrained convex optimization problem. It adds cost term so that if we optimize the final term it will approximate the result to the original problem.
+
+lagrangian relaxation is added as following:
+<p>
+$$ min (fx) + \lambda (b - g(x)) $$
+</p>
+here $$\lambda$$ is called lagrangian multiplier. 
+
+i am not going to stop here for the proof.
+
+<h2> Dual ascent</h2>
+Assume that we have following equality constrained convex optimization problem. 
+<p>
+$$
+\underset{x \in R^n}{\text{min}} f_0(x) \\
+\text{s.t } Ax=b.
+$$
+
+Then lagrangian of that problem can be written like this:
+<p>
+$$ L(x,y)  = f(x) + y^T (Ax-b)$$
+</p>
+
+<h2> Dual decomposition</h2>
+
+<h2> Augmented lagrangians</h2>
+
+<h2> Method of multipliers</h2>

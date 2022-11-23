@@ -23,7 +23,10 @@
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <!-- for mathjax support -->
+    
+	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+	
+	<!-- for mathjax support -->
     {% if page.usemathjax %}
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
