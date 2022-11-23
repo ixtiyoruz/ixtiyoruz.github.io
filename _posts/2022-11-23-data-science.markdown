@@ -14,13 +14,13 @@ usemathjax: true
 Data science bu  yirik hajmdagi data bilan ishlash orqali undagi har xil patternlarni yoki manoga ega informatsiyani ajratib olish bilan shug'ullanadi. Bu o'z navbatida biznesslar uchun qaror qabul qilishga yoki avtomatlashtirishga yordam beradi. Data sciece o'z ichiga ko'pgina informatsiya bilan ishlashga yordam beradigan toollarni qamrab oladi: matematik statistika, artificial intelligence (AI), computer engineering. 
 
 Data sciencening turlari juda ham ko'p. Bazan bir turini tushungan odam boshqa turiga unchalik ham tushunmaydi. Masalan:
-Computer vision va rasmlar ustida ishlash.
-Signal processing va to'lqinlar bilan ishlash.
-Time series analysis.
-Data science for search optimization.
-Categorical data bilan ishlovchilar.
-NLP va text data bilan ishlovchilar
-Va hokazo.
+- Computer vision va rasmlar ustida ishlash.
+- Signal processing va to'lqinlar bilan ishlash.
+- Time series analysis.
+- Data science for search optimization.
+- Categorical data bilan ishlovchilar.
+- NLP va text data bilan ishlovchilar
+- Va hokazo.
 Yuqoridagilar data science ning bir qismigina xolos shunga o'xshash juda ham ko'p turlari bor. 
 
 # Data scientistlar kimlar ?
