@@ -223,4 +223,4 @@ x
 ```
 
 ref:
-1. Man ham Aladdin <a href='https://www.youtube.com/watch?v=pkVwUVEHmfI&ab_channel=AladdinPersson'>Einsum Is All You Need</a> 
+1.  <a href='https://www.youtube.com/watch?v=pkVwUVEHmfI&ab_channel=AladdinPersson'>Einsum Is All You Need</a> 
